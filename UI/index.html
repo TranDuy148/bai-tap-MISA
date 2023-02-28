@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập MISA</title>
+    <link rel="stylesheet" href="/UI/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- nav  -->
+        <div id="navigation" class="nav">
+            <div class="nav-top">
+                <div title="MISA Quản Lý Tài Sản" class="logo logo-icon"></div>
+            </div>
+            <div class="nav-content">
+                <div class="nav-item"><div class="nav-item1"></div></div>
+                <div class="nav-item"><div class="nav-item2"></div></div>
+                <div class="nav-item"><div class="nav-item3"></div></div>
+                <div class="nav-item"><div class="nav-item4"></div></div>
+                <div class="nav-item"><div class="nav-item5"></div></div>
+                <div class="nav-item"><div class="nav-item6"></div></div>
+                <div class="nav-item"><div class="nav-item7"></div></div>
+            </div>
+            <div class="nav-footer">
+                <div id="nav-btn-more"></div>
+            </div>
+        </div>
+
+        <!-- nav detail -->
+        <div id="navigation-m" class="nav-m" hidden>
+            <div class="nav-m-top">
+                <div class="logo logo-icon"></div>
+                <div class="product-name">MISA QLTS</div>
+            </div>
+            <div class="nav-m-content">
+                <div class="nav-m-item1"><div class="nav-m-icon1"></div>
+                    <div class="nav-item-title">Tổng quan</div>
+                </div>
+                <div class="nav-m-item2"><div class="nav-m-icon2"></div>
+                    <div class="nav-item-title">Tài sản</div>
+                </div>
+                <div class="nav-m-item3"><div class="nav-m-icon3"></div>
+                    <div class="nav-item-title">Tài sản HT-ĐB</div>
+                </div>
+                <div class="nav-m-item4"><div class="nav-m-icon4"></div>
+                    <div class="nav-item-title">Công cụ dụng cụ</div>
+                </div>
+                <div class="nav-m-item5"><div class="nav-m-icon5"></div>
+                    <div class="nav-item-title">Danh mục</div>
+                </div>
+                <div class="nav-m-item6"><div class="nav-m-icon6"></div>
+                    <div class="nav-item-title">Tra cứu</div>
+                </div>
+                <div class="nav-m-item7"><div class="nav-m-icon7"></div>
+                    <div class="nav-item-title">Báo cáo</div>
+                </div>
+                
+            </div>
+            <div class="nav-m-footer">
+                <div id="nav-btn-collapse"></div>
+            </div>
+        </div>
+        
+        <div class="head-body-container">
+            <div class="header">
+                <div class="header-left">Danh sách tài sản</div>
+                <div class="header-right">
+                    <div class="name">Sở tài chính</div>
+                    <div class="time">
+                        <div>Năm</div>
+                        <div><b>2022</b></div>
+                        <div>..</div>
+                    </div>
+                    <div class="icon notification-icon"></div>
+                    <div class="icon squares-icon"></div>
+                    <div class="icon faq-icon"></div>
+                    <div class="icon user-icon"></div>
+                    <div class="more-icon"></div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="body-header">
+                    <div class="body-header-left">
+                        <div class="left-item1 search-icon"><input type="text" class="text-field search" placeholder="Tìm kiếm tài sản"></div>
+                        <div class="left-item2">
+                            <!-- <div class="dropdown filter-icon">
+                                <div class="choosen-value">Loại tài sản</div>
+                                <div class="arrow-down-icon"></div>
+                                <ul class="option-list">
+                                    <li>Loại 1</li>
+                                    <li>Loại 2</li>
+                                    <li>Loại 3</li>
+                                    <li>Loại 4</li>
+                                </ul>
+                            </div> -->
+                            <mcombobox icon="filter-icon" api="https://apidemo.laptrinhweb.edu.vn/api/v1/Positions" placeholder="Loại tài sản" modelName="PositionName" required></mcombobox>
+
+                        </div>
+                        <div class="left-item3">
+                            <!-- <div class="dropdown filter-icon">
+                                <div class="choosen-value">Bộ phận sử dụng</div>
+                                <div class="arrow-down-icon"></div>
+                                <ul class="option-list">
+                                    <li>Bộ phận 1</li>
+                                    <li>Bộ phận 2</li>
+                                    <li>Bộ phận 3</li>
+                                    <li>Bộ phận 4</li>
+                                </ul>
+                            </div> -->
+                            <mcombobox icon="filter-icon" api="https://apidemo.laptrinhweb.edu.vn/api/v1/Employees" placeholder="Bộ phận sử dụng"  modelName="DepartmentName" required></mcombobox>
+                            
+                        </div>
+                    </div>
+                    <div class="body-header-right">
+                        <button id="btnAddItem" class="btn main-btn add-btn">+ Thêm tài sản</button>
+                        <div title="Export dữ liệu" class="icon exel-btn"></div>
+                        <div title="Xóa dữ liệu" class="icon delete-btn"></div>
+                    </div>
+                </div>
+                <div class="body-content">
+                    <div class="table">
+                    <table id="tbPropertyList">
+                        <thead>
+                            <tr>
+                                <th class="col1" type="checkBox"><input id="check-top" class="checkbox" type="checkbox"></th>
+                                <th class="col2" type="stt">STT</th>
+                                <th class="col3" col-name="EmployeeCode">Mã tài sản</th>
+                                <th class="col4" col-name="FullName">Tên tài sản</th>
+                                <th class="col5" col-name="PositionName">Loại tài sản</th>
+                                <th class="col6" col-name="DepartmentName">Bộ phận sử dụng</th>
+                                <th class="col7" col-name="WorkStatus">Số lượng</th>
+                                <th class="col8" col-name="PhoneNumber">Nguyên giá</th>
+                                <th class="col9" col-name="Salary">HM/KH lũy kế</th>
+                                <th class="col10" col-name="PersonalTaxCode">Giá trị còn lại</th>
+                                <th class="col11" type="btnFunction">Chức năng</th>
+                            </tr>
+                        </thead>
+
+                        <tbody> <div class="data">
+                            <tr>
+                                <td class="col1"><input class="checkbox" type="checkbox"></td>
+                                <td class="col2">1</td>
+                                <td class="col3">MT434343</td>
+                                <td class="col4">Dell Insprion 3487</td>
+                                <td class="col5">Máy tính xách tay</td>
+                                <td class="col6">Phòng hành chính kế toán</td>
+                                <td class="col7">2</td>
+                                <td class="col8">20.000.000</td>
+                                <td class="col9">894.000</td>
+                                <td class="col10">19.106.000</td>
+                                <td class="col11">
+                                    <div class="icon update-icon"></div>
+                                    <div class="icon detail-icon"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col1"><input class="checkbox" type="checkbox"></td>
+                                <td class="col2">1</td>
+                                <td class="col3">MT434343</td>
+                                <td class="col4">Dell Insprion 3487</td>
+                                <td class="col5">Máy tính xách tay</td>
+                                <td class="col6">Phòng hành chính kế toán</td>
+                                <td class="col7">2</td>
+                                <td class="col8">20.000.000</td>
+                                <td class="col9">894.000</td>
+                                <td class="col10">19.106.000</td>
+                                <td class="col11">
+                                    <div class="icon update-icon"></div>
+                                    <div class="icon detail-icon"></div>
+                                </td>
+                            </tr>
+                        
+                        </div></tbody>
+                        
+                    </table>
+                    <div class="table-pagging">
+                        
+                        <div class="table-pagging-left">
+                            <div>Tổng số: <b>200</b> bản ghi</div>
+                        </div>
+                        <div class="table-pagging-right">
+                            <div class="sum1">17</div>
+                            <div class="sum2">230.000.000</div>
+                            <div  class="sum3">21.421.000</div>
+                            <div class="sum4">201.550.000</div>
+                        </div>
+                    </div> 
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="addItemForm" class="popup hidden" >
+            <div class="popup-container">
+                <div class="popup-top">
+                    <b>Thêm tài sản</b>
+                    <div class="icon close-icon btn-close"></div>
+                </div>
+                <div class="popup-mid">
+                    <label><p>Mã tài sản<span class="red-star"> *</span></p>
+                        <input type="text" id="tf-mats" class="text-field tf-mats input-required" placeholder="Nhập mã tài sản" value="">
+                    </label>
+                    <label><p>Tên tài sản<span class="red-star"> *</span></p>
+                        <input type="text" class="text-field tf-tents input-required" placeholder="Nhập tên tài sản" value="">
+                    </label>
+                    <label><p>Mã bộ phận sử dụng<span class="red-star"> *</span></p>
+                        <div class="dropdown tf-mabp mar-top-8px">
+                            <div class="choosen-value">Chọn mã bộ phận sử dụng</div>
+                            <div class="arrow-down-icon"></div>
+                            <ul class="option-list">
+                                <li>Bộ phận 1</li>
+                                <li>Bộ phận 2</li>
+                                <li>Bộ phận 3</li>
+                                <li>Bộ phận 4</li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+                    <label><p>Tên bộ phận sử dụng</p>
+                        <input type="text" class="text-field tf-tenbp disable-text" placeholder="" value="" disabled>
+                    </label>
+
+                    <label><p>Mã loại tài sản<span class="red-star"> *</span></p>
+                        
+                        <div class="dropdown tf-maloaits mar-top-8px">
+                            <div class="choosen-value">Chọn mã loại tài sản</div>
+                            <div class="arrow-down-icon"></div>
+                            <ul class="option-list">
+                                <li>Loại 1</li>
+                                <li>Loại 2</li>
+                                <li>Loại 3</li>
+                                <li>Loại 4</li>
+                            </ul>
+                        </div>
+                    </label>
+                    <label><p>Tên loại tài sản</p>
+                        <input type="text" class="text-field tf-tenloaits disable-text" placeholder="" disabled>
+                    </label>
+                    <label><p>Số lượng<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-soluong input-required" placeholder="" value="01">
+                    </label>
+                    <label><p>Nguyên giá<span class="red-star"> *</span></p>
+                        <input type="number" id="tf-nguyengia" class="text-field tf-nguyengia input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Số năm sử dụng<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-sonamsd input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Tỉ lệ hao mòn (%)<span class="red-star"> *</span></p>
+                        <input type="number" id="tf-tilehaomon" min="0" max="100" class="text-field tf-tilehaomon input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Giá trị hao mòn năm<span class="red-star"> *</span></p>
+                        <input type="number" id="tf-haomonnam" class="text-field tf-haomonnam input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Năm theo dõi</p>
+                        <input type="number" class="text-field tf-namtheodoi disable-text" disabled placeholder="" value="">
+                    </label>
+                    <label><p>Ngày mua<span class="red-star"> *</span></p>
+                        <input type="date" class="input-date text-field day tf-ngaymua input-required" placeholder="" value="">
+                    </label>
+                    <label><p>Ngày bắt đầu sử dụng<span class="red-star"> *</span></p>
+                        <input type="date" class="input-date text-field tf-ngaybatdausd day input-required" placeholder="" value="">
+                    </label>
+                </div>
+                <div class="popup-bot">
+                    <button class="btn sub-btn btn-close">Hủy</button>
+                    <button id="saveBtn" class="btn main-btn">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="updateItemForm" class="popup hidden" >
+            <div class="popup-container">
+                <div class="popup-top">
+                    <b>Sửa tài sản</b>
+                    <div class="icon close-icon btn-close"></div>
+                </div>
+                <div class="popup-mid">
+                    <label><p>Mã tài sản<span class="red-star"> *</span></p>
+                        <input type="text" class="text-field tf-mats input-required" placeholder="Nhập mã tài sản" value="">
+                    </label>
+                    <label><p>Tên tài sản<span class="red-star"> *</span></p>
+                        <input type="text" class="text-field tf-tents input-required" placeholder="Nhập tên tài sản" value="">
+                    </label>
+                    <label><p>Mã bộ phận sử dụng<span class="red-star"> *</span></p>
+                        <div class="dropdown tf-mabp mar-top-8px">
+                            <div class="choosen-value">Chọn mã bộ phận sử dụng</div>
+                            <div class="arrow-down-icon"></div>
+                            <ul class="option-list">
+                                <li>Bộ phận 1</li>
+                                <li>Bộ phận 2</li>
+                                <li>Bộ phận 3</li>
+                                <li>Bộ phận 4</li>
+                            </ul>
+                        </div>
+                    </label>
+                    
+                    <label><p>Tên bộ phận sử dụng</p>
+                        <input type="text" class="text-field tf-tenbp disable-text" placeholder="" value="" disabled>
+                    </label>
+
+                    <label><p>Mã loại tài sản<span class="red-star"> *</span></p>
+                        
+                        <div class="dropdown tf-maloaits mar-top-8px">
+                            <div class="choosen-value">Chọn mã loại tài sản</div>
+                            <div class="arrow-down-icon"></div>
+                            <ul class="option-list">
+                                <li>Loại 1</li>
+                                <li>Loại 2</li>
+                                <li>Loại 3</li>
+                                <li>Loại 4</li>
+                            </ul>
+                        </div>
+                    </label>
+                    <label><p>Tên loại tài sản</p>
+                        <input type="text" class="text-field tf-tenloaits disable-text" placeholder="" disabled>
+                    </label>
+                    <label><p>Số lượng<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-soluong input-required" placeholder="" value="01">
+                    </label>
+                    <label><p>Nguyên giá<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-nguyengia input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Số năm sử dụng<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-sonamsd input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Tỉ lệ hao mòn (%)<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-tilehaomon input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Giá trị hao mòn năm<span class="red-star"> *</span></p>
+                        <input type="number" class="text-field tf-sonamsd input-required" placeholder="" value="0">
+                    </label>
+                    <label><p>Năm theo dõi</p>
+                        <input type="number" class="text-field tf-namtheodoi disable-text" disabled placeholder="" value="">
+                    </label>
+                    <label><p>Ngày mua<span class="red-star"> *</span></p>
+                        <input type="date" class="text-field day tf-ngaymua input-required" placeholder="" value="">
+                    </label>
+                    <label><p>Ngày bắt đầu sử dụng<span class="red-star"> *</span></p>
+                        <input type="date" class="text-field day tf-ngaybatdausd input-required" placeholder="" value="">
+                    </label>
+                </div>
+                <div class="popup-bot">
+                    <button class="btn sub-btn btn-close">Hủy</button>
+                    <button class="btn main-btn">Lưu</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- cảnh báo -->
+        <div id="war-container" class="overlay hidden">
+            <div id="warning" class="warning">
+                <div class="warning-content">
+                    <img src="/Assets/icon/warning.png" alt="" class="warning-icon">
+                    <div id="warning-title" class="warning-title">Bạn có muốn xóa ?</div>
+                </div>
+                <div class="dialog-footer">
+                    <button id="war-main-btn" class="btn main-btn">Xóa</button>
+                    <button id="war-sub-btn" class="btn outline-btn">Không</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/UI/js/action.js"></script>
+    <script src="/UI/js/validate.js"></script>
+    <script src="/UI/js/dropdown.js"></script>
+    <script src="/UI/js/form.js"></script>
+    <script src="/UI/js/validate.js"></script>
+    <script src="/UI/js/combobox.js"></script>
+
+    
+
+</body>
+</html>

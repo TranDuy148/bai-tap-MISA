@@ -1,0 +1,89 @@
+.icon{
+    background-image: url('../../../Assets/icon/qlts-icon.svg');
+}
+.user-icon{
+    width: 24px;
+    height: 24px;
+    background-position: -20px -20px;
+    margin-left: 14px;
+    cursor: pointer;
+
+}
+.logo-icon{
+    background-image: url('../../../Assets/icon/qlts-icon.svg');    
+    width: 36px;
+    height: 36px;
+    background-position: -20px -680px;
+    cursor: pointer;
+}
+.more-icon{
+    background-image: url('../../../Assets/icon/qlts-icon.svg');
+    background-position: -72px -335px;
+    width: 7px;
+    height: 10px;
+    margin-left: 6px;
+    cursor: pointer;
+
+}
+.faq-icon{
+    width: 24px;
+    height: 24px;
+    background-position: -64px -64px;
+    margin-left: 14px;
+    cursor: pointer;
+
+}
+.squares-icon{
+    background-position: -195px -20px;
+    width: 24px;
+    height: 24px;
+    margin-left: 14px;
+    cursor: pointer;
+
+}
+.notification-icon{
+    background-position: -325px -107px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.update-icon{
+    display: inline-block;
+    cursor: pointer;
+    background-position: -154px -66px;
+    width: 20px;
+    height: 20px;
+}
+.detail-icon{
+    display: inline-block;
+    cursor: pointer;
+    background-position: -242px -110px;
+    width: 20px;
+    height: 20px;
+}
+
+.close-icon{
+    width: 24px;
+    height: 24px;
+    background-position: -372px -284px;
+    cursor: pointer;
+}
+.filter-icon{
+    background: url('/Assets/icon/filter-icon.png') no-repeat;
+    background-position: 11px center;
+	/* padding-left: 39px !important; */
+    background-color: white;
+	background-size: 18px;
+    width: 219px !important;
+}
+.arrow-down-icon{
+    background: url('/Assets/icon/down-arrow-small.png') no-repeat;
+    background-size: 7px 5px;
+    width: 7px;
+    height: 5px;
+    position: absolute;
+    right: 12px;
+    top: 15px;
+}
+

@@ -1,0 +1,82 @@
+.btn{
+    min-width: 80px;
+    height: 36px;
+    border-radius: 3px;
+    cursor: pointer !important;
+}
+.main-btn{
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, .16); */
+    border: none;
+    background-color: #1aa4c8;
+    color: white;
+}
+.main-btn:hover{
+    background-color: #0582a2;
+}
+.main-btn:active{
+    background-color: #28b7dc;
+}
+.main-btn:focus{
+    background-color: #28b7dc;
+    box-shadow: #50b9d5 0 0 1px 1px;
+}
+.main-btn:disabled{
+    opacity: 70%;
+}
+
+.sub-btn{
+    border: 1px solid #1aa4c8;
+    background-color: #ffffff;
+    color: #000000;
+}
+.sub-btn:hover{
+    background-color: #d1edf4;
+}
+.sub-btn:focus{
+    box-shadow: #50b9d5 0 0 1px 1px;
+}
+.sub-btn:disabled{
+    opacity: 70%;
+}
+
+.outline-btn{
+    color: #000000;
+    border: #cacaca solid 1px;
+    background-color: #ffffff;
+}
+.outline-btn:hover{
+    color: #ffffff;
+    background-color: #1aa4c8;
+}
+.outline-btn:active{
+    color: #ffffff;
+    background-color: #1aa4c8;
+}
+.outline-btn:focus{
+    color: #ffffff;
+    background-color: #1aa4c8;
+    box-shadow: #50b9d5 0 0 1px 1px;
+}
+.outline-btn:disabled{
+    opacity: 70%;
+}
+
+.exel-btn{
+    width: 36px;
+    height: 36px;
+    background-position: -278px -102px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .16);
+    cursor: pointer;
+    border-radius: 3px;
+}
+.delete-btn{
+    width: 36px;
+    height: 36px;
+    border-radius: 3px;
+    background-position: -454px -102px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .16);
+    cursor: pointer;
+}
+

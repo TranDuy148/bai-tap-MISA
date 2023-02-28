@@ -1,0 +1,81 @@
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.521);
+}
+.popup-container{
+    width: 724px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+}
+.popup-top{
+    border-top-left-radius: 4px ;
+    border-top-right-radius: 4px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding: 20px 16px;
+}
+.popup-top b{
+    font-size: 20px;
+    font-weight: 700;
+}
+.popup-mid{
+    padding: 0 16px 20px 16px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    column-gap: 16px;
+    flex-grow: 0;
+    /* grid-template-columns: 220px 220px 220px;
+    grid-template-rows: 64px 64px 64px 64px 64px;
+    column-gap: 16px;
+    row-gap: 16px; */
+}
+.popup-mid .text-field{
+    width: 220px;
+}
+.popup-mid .tf-tents{
+    width: 456px;
+}
+.popup-mid .tf-mabp{
+    width: 220px;
+}
+
+.popup-mid .tf-tenbp{
+    width: 456px;
+}
+.popup-mid .tf-tenloaits{
+    width: 456px;
+}
+/* .popup-mid .input-date{
+
+} */
+/* .popup-mid .icon-date{
+    
+} */
+.popup-bot{
+    background-color:#f5f5f5;
+    height: 52px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 16px;
+    border-end-end-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.popup-bot .sub-btn{
+    border: none;
+    margin-right: 10px;
+    width: 110px;
+}
+.popup-bot .main-btn{
+    width: 110px;
+}

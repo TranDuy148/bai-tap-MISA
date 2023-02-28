@@ -1,0 +1,40 @@
+@import url(/UI/css/container.css);
+@import url(/UI/css/navigation.css);
+@import url(/UI/css/header.css);
+@import url(/UI/css/body.css);
+@import url(/UI/css/elements/button.css);
+@import url(/UI/css/elements/icon.css);
+@import url(/UI/css/elements/textfield.css);
+@import url(/UI/css/elements/popup.css);
+@import url(/UI/css/elements/dialog.css);
+@import url(/UI/css/elements/dropdown.css);
+@import url(/UI/css/navdetails.css);
+
+@font-face {
+    font-family: Roboto;
+    src: url(/Assets/Roboto/Roboto-Regular.ttf);
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: Roboto;
+}
+.hidden{
+    display: none;
+}
+.mar-top-8px{
+    margin-top: 8px;
+}
+.disable-text{
+    background-color: #f5f5f5;
+}
+.text-align-left{
+    text-align: left;
+}
+.text-align-center{
+    text-align: center;
+}
+.text-align-right{
+    text-align: right;
+}

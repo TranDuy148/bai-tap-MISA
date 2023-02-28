@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements</title>
+    <link rel="stylesheet" href="/UI/css/elements/button.css">
+    <link rel="stylesheet" href="/UI/css/elements/textfield.css">
+    <link rel="stylesheet" href="/UI/css/main.css">
+</head>
+<body style="padding: 20px;">
+    <div>
+        <div>1. Main button</div>
+        <div><button class="btn main-btn">Button</button></div>
+    </div>
+    <div>
+        <div>2. Sub button</div>
+        <div><button class="btn sub-btn">Button</button></div>
+    </div>
+    <div>
+        <div>3. Outline button</div>
+        <div><button class="btn outline-btn">Button</button></div>
+    </div>
+    <div>
+        <label>Text field
+            <input type="text" class="text-field" placeholder="placeholder">
+        </label>
+    </div>
+    <input type="text" value="" class="demo">
+    <div>- Dropdown <span class="red-star"> *</span></div>
+    <div class="dropdown">
+        <div class="choosen-value">Chọn</div>
+        <div class="arrow-down-icon"></div>
+        <ul class="option-list">
+            <li>Value 1</li>
+            <li>Value 2</li>
+            <li>Value 3</li>
+            <li>Vlaue 4</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="dropdown">
+        <div class="choosen-value">Chọn</div>
+        <div class="arrow-down-icon"></div>
+        <ul class="option-list">
+            <li>Value 1</li>
+            <li>Value 2</li>
+            <li>Value 3</li>
+            <li>Vlaue 4</li>
+        </ul>
+    </div>
+
+    alo
+    <div class="left-item2">
+        <mcombobox icon="filter-icon" api="https://apidemo.laptrinhweb.edu.vn/api/v1/Employees" modelName="DepartmentName" required></mcombobox>
+    </div>
+
+    <script src="/UI/js/dropdown.js"></script>
+    <script src="/UI/js/combobox.js"></script>
+
+    <script>
+        document.getElementsByClassName("demo")[0].value = "22";
+    </script>
+</body>
+</html>

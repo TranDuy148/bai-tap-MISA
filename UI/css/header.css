@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.header-left{
+    margin-left: 20px;
+    font-weight: 700;
+}
+.header-right{
+    margin-right: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-btn{
+    width: 110px;
+}
+.time{
+    width: 112px;
+    height: 30px;
+    border-radius: 3px;
+    background-color:#d1edf4;
+    margin: 0 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
