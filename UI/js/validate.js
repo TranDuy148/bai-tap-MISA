@@ -17,7 +17,11 @@ class PropertyPage{
         this.loadData();
         this.intEvents();
     }
-    // load dữ liệu cho table
+    /**
+     * load dữ liệu cho table
+     * author: Trần Xuân Duy
+     * date: 1/3/2023
+     */
     loadData(){
         try {
             //gọi api lấy dữ liệu
@@ -33,7 +37,11 @@ class PropertyPage{
         }
     }
 
-    //tạo table
+    /**
+     * tạo table
+     * author: Trần Xuân Duy
+     * date: 1/3/2023
+     */
     builDataTable(){
         try {
             let table = document.getElementById("tbPropertyList");
@@ -158,7 +166,11 @@ class PropertyPage{
    }
 }
 
-//hiển thị form sửa thông tin
+/**
+ * hiển thị form sửa thông tin
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function showUpdateForm(){
 
     var btnsUpdate = document.getElementsByClassName("update-icon");
@@ -170,7 +182,11 @@ function showUpdateForm(){
     }
 }
 
-//validate  
+/**
+ * hàm gán các events
+ * author: Trần Xuân Duy
+ * date:1/3/2023
+ */ 
 function createEvents(){
     try {
         //event khi input -> blur
@@ -200,7 +216,11 @@ function createEvents(){
     }
 }
 
-//validate dữ liệu trống
+/**
+ * validate dữ liệu trống
+ * author: Trần Xuân Duy
+ * date:1/3/2023
+ */
 function onValidateEmpty(){
     try {
         //lấy ra data trong input vừa nhập
@@ -244,7 +264,11 @@ function onValidateEmpty(){
 //     let checkBoxThis = row.getElementsByTagName("input")[0];
 // }
 
-//checkbox condition
+/**
+ * checkbox condition
+ * author: Trần Xuân Duy
+ * date:1/3/2023
+ */
 function onCheck(){
     try {
         //nếu check-top được check
@@ -259,7 +283,11 @@ function onCheck(){
         console.log(error);
     }
 }
-//check all
+/**
+ * check all
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function checkAll(){
     try {
         //tạo list các checkbox
@@ -272,7 +300,11 @@ function checkAll(){
         console.log(error);
     }
 }
-//uncheck all
+/**
+ * uncheck all
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function unCheckAll(){
     try {
         //tạo list các checkbox
@@ -286,7 +318,11 @@ function unCheckAll(){
     }
 }
 
-//validate số lượng >0
+/**
+ * validate số lượng >0
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function onValidateEmpty(){
     try {
         //lấy ra data trong input vừa nhập
@@ -323,7 +359,11 @@ function onValidateEmpty(){
     }
 }
 
-// đặt giá trị mặc địnnh là ngày hôm nay
+/**
+ * đặt giá trị mặc địnnh là ngày hôm nay
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function onTime(){
     try {
         today = new Date();
@@ -340,7 +380,11 @@ function onTime(){
     }
 }
 
-//tự động tính tỉ lệ hao mòn khi hao mòn năm thay đổi
+/**
+ * tự động tính tỉ lệ hao mòn khi hao mòn năm thay đổi
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function onHaoMonNamChange(){
     try {
         tiLeHaoMon.value = (haoMonNam.value / nguyenGia.value) * 100;
@@ -348,7 +392,11 @@ function onHaoMonNamChange(){
         console.log(error);
     }
 }
-//tự động tính giá trị hao mòn năm khi tỉ lệ thay đổi
+/**
+ * tự động tính giá trị hao mòn năm khi tỉ lệ thay đổi
+ * author: Trần Xuân Duy
+ * date:1/3/2023
+ */
 function onTiLeHaoMonChange(){
     try {
         haoMonNam.value = (tiLeHaoMon.value / 100) * nguyenGia.value;
@@ -356,7 +404,11 @@ function onTiLeHaoMonChange(){
         console.log(error);
     }
 }
-//tự động tính giá trị hao mòn khi giá thay đổi
+/**
+ * tự động tính giá trị hao mòn khi giá thay đổi
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function onNguyenGiaChange(){
     try {
         haoMonNam.value = (tiLeHaoMon.value / 100) * nguyenGia.value;
@@ -365,7 +417,11 @@ function onNguyenGiaChange(){
     }
 }
 
-//kiểm tra lại dữ liệu khi ấn nút Lưu
+/**
+ * kiểm tra lại dữ liệu khi ấn nút Lưu
+ * author: Trần Xuân Duy
+ * date: 1/3/2023
+ */
 function kiemTraDuLieuHopLe(){
     try {
         if(haoMonNam.value > nguyenGia.value){

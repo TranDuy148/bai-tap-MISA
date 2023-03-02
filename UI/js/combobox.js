@@ -144,25 +144,7 @@ class Combobox{
         }
     }
     
-    /**
-     * Hàm loại bỏ dấu trong tiếng việt
-     */
-    removeVietnameseDiacritics(str) {
-        try {
-            str = str.toLowerCase();
-            str = str.replace(/á|à|ả|ã|ạ|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/g, 'a');
-            str = str.replace(/đ/g, 'd');
-            str = str.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/g, 'e');
-            str = str.replace(/í|ì|ỉ|ĩ|ị/g, 'i');
-            str = str.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/g, 'o');
-            str = str.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/g, 'u');
-            str = str.replace(/ý|ỳ|ỷ|ỹ|ỵ/g, 'y');
-            return str;
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
+    
     /**
      * Hàm xử lý khi người dùng lựa chọn giá trị
      */
@@ -265,6 +247,25 @@ class Combobox{
               };
         }
     }
+    /**
+     * Hàm loại bỏ dấu trong tiếng việt
+     */
+    removeVietnameseDiacritics(str) {
+        try {
+            str = str.toLowerCase();
+            str = str.replace(/á|à|ả|ã|ạ|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/g, 'a');
+            str = str.replace(/đ/g, 'd');
+            str = str.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/g, 'e');
+            str = str.replace(/í|ì|ỉ|ĩ|ị/g, 'i');
+            str = str.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/g, 'o');
+            str = str.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/g, 'u');
+            str = str.replace(/ý|ỳ|ỷ|ỹ|ỵ/g, 'y');
+            return str;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 }
 
 new Combobox()
